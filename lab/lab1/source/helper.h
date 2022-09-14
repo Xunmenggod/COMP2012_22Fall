@@ -3,7 +3,7 @@
 
 #include "element.h"
 
-const int DAMAGE_NORMALIZED_FACTOR = 5;
+const int DAMAGE_NORMALIZED_FACTOR = 10;
 const int WEAKNESS_BONUS_RATIO = 2;
 
 class Monster_Map;

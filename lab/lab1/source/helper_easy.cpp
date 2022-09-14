@@ -11,11 +11,11 @@ using namespace std;
 //You should not add more monster or change the position_x or position_y, or else the program will crash.
 //For elements, you may refer to element.h
 void init_monster(Monster_Map* const monster_map){
-    monster_map->set_monster(2, 2, new Monster(, , , , , 2, 2, , ));
-    monster_map->set_monster(2, 4, new Monster(, , , , , 4, 2, , ));
-    monster_map->set_monster(3, 3, new Monster(, , , , , 3, 3, , ));
-    monster_map->set_monster(5, 5, new Monster(, , , , , 5, 5, , ));
-    monster_map->set_monster(4, 2, new Monster(, , , , , 2, 4, , ));
+    monster_map->set_monster(2, 2, new Monster("Ada", 100, 10, 2, 2, 2, 2, 2, ICE));
+    monster_map->set_monster(2, 4, new Monster("Bob", 100, 10, 2, 2, 4, 2, 2, NOMRAL));
+    monster_map->set_monster(3, 3, new Monster("Candy", 100, 10, 2, 2, 3, 3, 2, FIRE));
+    monster_map->set_monster(5, 5, new Monster("David", 100, 10, 10, 2, 5, 5, 2, WIND));
+    monster_map->set_monster(4, 2, new Monster("Eros", 100, 10, 10, 10, 2, 4, 1, THUNDER));
 }
 
 //You should not add more than 10 skills for the shop.
