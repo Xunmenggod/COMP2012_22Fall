@@ -1,0 +1,67 @@
+---SYSTEM PRINTING INFO---
+--------------------------
+MATCH 1
+---LISTING PLAYERS---
+FIRST COUNTRY: FRANCE
+Lloris, Pavard, Varane, Umtiti, Hernandez, Kante, Matuidi, Pogba, Griezmann, Mbappe, Giroud
+
+SECOND COUNTRY: CROATIA
+Subasic, Vrsaljko, Strinic, Lovren, Vida, Rakitic, Modric, Brozovic, Perisic, Mandzukic, Rebic
+
+THE GAME START!!
+At minute 18, Mandzukic from CROATIA scores 1 points for FRANCE!!!
+At minute 27, Kante from FRANCE received a yellow card.
+At minute 28, Perisic from CROATIA scores 1 points for CROATIA!!!
+At minute 38, Griezmann from FRANCE scores 1 points for FRANCE!!!
+At minute 27, Hernandez from FRANCE received a yellow card.
+At minute 59, Pogba from FRANCE scores 1 points for FRANCE!!!
+At minute 65, Mbappe from FRANCE scores 1 points for FRANCE!!!
+At minute 69, Mandzukic from CROATIA scores 1 points for CROATIA!!!
+At minute 92, Vrsaljko from CROATIA received a yellow card.
+THE GAME ENDS!!
+
+--------------------------
+MATCH 2
+---LISTING PLAYERS---
+FIRST COUNTRY: GERMANY
+Manuel Neuer, Benedikt Höwedes, Mats Hummels, Jérôme Boateng, Philipp Lahm, Toni Kroos, Bastian Schweinsteiger, Sami Khedira, Mesut Özil, Miroslav Klose, Thomas Müller
+
+SECOND COUNTRY: ARGENTINA
+Sergio Romero, Marcos Rojo, Ezequiel Garay, Martín Demichelis, Pablo Zabaleta, Javier Mascherano, Lucas Biglia, Enzo Pérez, Ezequiel Lavezzi, Lionel Messi, Gonzalo Higuaín
+
+THE GAME START!!
+At minute 29, Bastian Schweinsteiger from GERMANY received a yellow card.
+At minute 33, Benedikt Höwedes from GERMANY received a yellow card.
+At minute 64, Javier Mascherano from ARGENTINA received a yellow card.
+At minute 65, Sergio Agüero from ARGENTINA received a yellow card.
+At minute 113, Mario Götze from GERMANY scores 1 points for GERMANY!!!
+THE GAME ENDS!!
+
+--------------------------
+MATCH 3
+---LISTING PLAYERS---
+FIRST COUNTRY: Netherlands
+Maarten Stekelenburg, Giovanni van Bronckhorst, Joris Mathijsen, John Heitinga, Gregory van der Wiel, Nigel de Jong, Mark vam Bommel, Dirk Kuyt, Wesley Sneijder, Arjen Robben, Robin van Persie
+
+SECOND COUNTRY: Spain
+Iker Casillas, Joan Capdevila, Carles Puyol, Gerard Piqué, Sergio Ramos, Sergio Busquets, Xabi Alonso, Xavi Hernández, Andres Iniesta, Pedro, David Villa
+
+THE GAME START!!
+At minute 15, Robin van Persie from Netherlands received a yellow card.
+At minute 17, Carles Puyol from Spain received a yellow card.
+At minute 22, Mark vam Bommel from Netherlands received a yellow card.
+At minute 23, Sergio Ramos from Spain received a yellow card.
+At minute 28, Nigel de Jong from Netherlands received a yellow card.
+At minute 54, Giovanni van Bronckhorst from Netherlands received a yellow card.
+At minute 57, John Heitinga from Netherlands received a yellow card.
+At minute 67, Joan Capdevila from Spain received a yellow card.
+At minute 84, Arjen Robben from Netherlands received a yellow card.
+At minute 109, John Heitinga from Netherlands received a red card!!
+At minute 111, Gregory van der Wiel from Netherlands received a yellow card.
+At minute 116, Andres Iniesta from Spain scores 1 points for Spain!!!
+At minute 117, Joris Mathijsen from Netherlands received a yellow card.
+At minute 118, Andres Iniesta from Spain received a yellow card.
+At minute 120, Xavi Hernández from Spain received a yellow card.
+THE GAME ENDS!!
+
+---SYSTEM END PRINTING---
