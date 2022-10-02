@@ -59,7 +59,7 @@ void Event::print_info(const char* first_country_name, const char* second_countr
 //Task1: Constructor
 Match::Match(const char* first_country_name, const char* second_country_name, const char** first_players, int num_first_players, const char** second_players, int num_second_players){
     //this->events(); , how quick?
-    events = new Event*[30];
+    //events = new Event*[30];
     for (int i = 0; i < 30; i++)
         this->events[i] = nullptr;
     
@@ -72,39 +72,47 @@ Match::Match(const char* first_country_name, const char* second_country_name, co
     strcpy(this->second_country_name, second_country_name);
     // how to dynamically allocate enough memory for each player's name?
     this->first_players = new char*[num_first_players];
-    for (int i = 0; i < num_first_players; i ++)
+    for (int i = 0; i < num_first_players; i ++) {
+        this->first_players[i] = new char[strlen(first_players[i]) + 1];
         strcpy(this->first_players[i], first_players[i]);
+    }
     this->second_players = new char*[num_second_players];
-    for (int i = 0; i < num_second_players; i ++)
-        strcpy(this->second_players[i], second_players[i]); 
+    for (int i = 0; i < num_second_players; i ++) {
+        this->second_players[i] = new char[strlen(second_players[i] + 1)];
+        strcpy(this->second_players[i], second_players[i]);
+    } 
 }
 
 //Task2: Copy Constructor
 Match::Match(const Match& match)
 :num_event{match.num_event}, num_first_players{match.num_first_players}, num_second_players{match.num_second_players} 
 {
-    events = new Event*[30];
     for (int i = 0; i < 30; i++)
-        this->events[i] = match.events[i];
+        this->events[i] = new Event(*match.events[i]);  
 
     this->first_country_name = new char[strlen(match.first_country_name) + 1];
     strcpy(this->first_country_name, match.first_country_name);
     this->first_players = new char*[sizeof(match.first_players)];
-    for (int i = 0; i < sizeof(match.first_players); i++)
+    for (int i = 0; i < sizeof(match.first_players); i++) {
+        this->first_players[i] = new char[strlen(match.first_players[i]) + 1];
         strcpy(this->first_players[i], match.first_players[i]);
-    
+    }
+
     this->second_country_name = new char[strlen(match.second_country_name) + 1];
     strcpy(this->second_country_name, match.second_country_name);
     this->second_players = new char*[sizeof(match.second_players)];
-    for (int i = 0; i < sizeof(match.second_players); i++)
+    for (int i = 0; i < sizeof(match.second_players); i++){
+        this->second_players[i] = new char[strlen(match.second_players[i] + 1)];
         strcpy(this->second_players[i], match.second_players[i]);
+    }
 }
 
 //Task3: Destructor
 Match::~Match(){
     delete[] first_country_name;
     delete[] second_country_name;
-    delete[] events;
+    for (int i = 0; i < 30; i++)
+        delete events[i];
     for (int i = 0; i < sizeof(first_players); i++)
         delete[] first_players[i];
     delete[] first_players;
