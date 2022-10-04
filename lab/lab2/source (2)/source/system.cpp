@@ -78,7 +78,7 @@ Match::Match(const char* first_country_name, const char* second_country_name, co
     }
     this->second_players = new char*[num_second_players];
     for (int i = 0; i < num_second_players; i ++) {
-        this->second_players[i] = new char[strlen(second_players[i] + 1)];
+        this->second_players[i] = new char[strlen(second_players[i]) + 1];
         strcpy(this->second_players[i], second_players[i]);
     } 
 }
@@ -87,22 +87,22 @@ Match::Match(const char* first_country_name, const char* second_country_name, co
 Match::Match(const Match& match)
 :num_event{match.num_event}, num_first_players{match.num_first_players}, num_second_players{match.num_second_players} 
 {
-    for (int i = 0; i < 30; i++)
-        this->events[i] = new Event(*match.events[i]);  
+    for (int i = 0; i < match.num_event; i++) 
+        this->events[i] = new Event(*(match.events[i]));  
 
     this->first_country_name = new char[strlen(match.first_country_name) + 1];
     strcpy(this->first_country_name, match.first_country_name);
-    this->first_players = new char*[sizeof(match.first_players)];
-    for (int i = 0; i < sizeof(match.first_players); i++) {
+    this->first_players = new char*[match.num_first_players];
+    for (int i = 0; i < match.num_first_players; i++) {
         this->first_players[i] = new char[strlen(match.first_players[i]) + 1];
         strcpy(this->first_players[i], match.first_players[i]);
     }
 
     this->second_country_name = new char[strlen(match.second_country_name) + 1];
     strcpy(this->second_country_name, match.second_country_name);
-    this->second_players = new char*[sizeof(match.second_players)];
-    for (int i = 0; i < sizeof(match.second_players); i++){
-        this->second_players[i] = new char[strlen(match.second_players[i] + 1)];
+    this->second_players = new char*[match.num_second_players];
+    for (int i = 0; i < match.num_second_players; i++){
+        this->second_players[i] = new char[strlen(match.second_players[i]) + 1];
         strcpy(this->second_players[i], match.second_players[i]);
     }
 }
@@ -111,13 +111,14 @@ Match::Match(const Match& match)
 Match::~Match(){
     delete[] first_country_name;
     delete[] second_country_name;
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < num_event; i++)
         delete events[i];
-    for (int i = 0; i < sizeof(first_players); i++)
+    cout<<"size of num first players"<<sizeof(num_first_players)<<endl;
+    for (int i = 0; i < num_first_players; i++)
         delete[] first_players[i];
     delete[] first_players;
 
-    for (int i = 0; i < sizeof(second_players); i++)
+    for (int i = 0; i < num_second_players; i++)
         delete[] second_players[i];
     delete[] second_players;
 }

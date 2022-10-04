@@ -5,10 +5,10 @@ using namespace std;
 
 
 int main(int argc, char* argv[]){
-    if(argc < 2){
-        cout << "Too few Arguments. PLease input again." << endl;
-        return 0;
-    }
+    // if(argc < 2){
+    //     cout << "Too few Arguments. PLease input again." << endl;
+    //     return 0;
+    // }
 
     System* system = new System();
 
@@ -62,7 +62,9 @@ int main(int argc, char* argv[]){
     
     system->add_match(m3);
 
-    char testcase = *argv[1];
+    // char testcase = *argv[1];
+    char testcase;
+    cin>>testcase;
 
     switch (testcase)
     {
@@ -101,5 +103,6 @@ int main(int argc, char* argv[]){
             break;
         }
     }
+    cin>>testcase;
     return 0;
 }
