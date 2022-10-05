@@ -1,0 +1,17 @@
+Enter testcase number: 
+Test Case: 1
+PRINTING ALL COURSE INFORMATION: 
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+

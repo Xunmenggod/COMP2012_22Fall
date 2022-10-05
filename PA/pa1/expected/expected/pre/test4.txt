@@ -1,0 +1,55 @@
+Enter testcase number: 
+Test Case: 4
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP1000
+Num Credit: 3
+Current Size: 0 out of Capacity: 10
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: COMP1022P
+Num Credit: 3
+Current Size: 0 out of Capacity: 50
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: ECON1000
+Num Credit: 4
+Current Size: 0 out of Capacity: 50
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: MATH1003
+Num Credit: 2
+Current Size: 0 out of Capacity: 10
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: LANG1002A
+Num Credit: 3
+Current Size: 0 out of Capacity: 20
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+PRINTING ALL STUDENT INFORMATION: 
+
