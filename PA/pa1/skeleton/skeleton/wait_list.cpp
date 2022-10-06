@@ -20,7 +20,7 @@ Wait_List::Wait_List(const Wait_List& wait_list) {
     Student_ListNode* this_list = nullptr;
     Student_ListNode* node = wait_list.head;
 
-    while(!node) {
+    while(node) {
         this_list = new Student_ListNode(node->student_id, node->next);
         if (node == wait_list.head)
             head = this_list;

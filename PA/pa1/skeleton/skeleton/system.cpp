@@ -52,18 +52,148 @@ void System::admit(const char* const name, const int student_id, const double gp
 
 bool System::apply_overload(const int student_id, const int request_credit) {
     // TODO
+    if (request_credit > 30)
+        return false;
+
+    Student* applicant = student_database->get_student_by_id(student_id);
+    if (request_credit > 18 && applicant->get_gpa() >= 3.3)
+        return true;
+    else if(request_credit > 24 && applicant->get_gpa() >= 3.7)
+        return true;
+    else
+        return false;
 }
 
 bool System::add(const int student_id, const char* const course_name) {
     // TODO
+    Student* requester = student_database->get_student_by_id(student_id);
+    Course* reqeusted_course = course_database->get_course_by_name(course_name);
+    if ((requester->get_curr_credit() + requester->get_pending_credit() + reqeusted_course->get_num_credit()) > requester->get_max_credit())
+        return false;
+
+    if (reqeusted_course->get_size() < reqeusted_course->get_capacity()) {
+        char** enrolled_courses = requester->get_enrolled_courses();
+        enrolled_courses[requester->get_num_enrolled_course()] = new char[strlen(course_name) + 1];
+        strcpy(enrolled_courses[requester->get_num_enrolled_course()], course_name);
+        requester->set_enrolled_courses(enrolled_courses);
+        requester->set_curr_credit(requester->get_curr_credit() + reqeusted_course->get_num_credit());
+        requester->set_num_enrolled_course(requester->get_curr_credit() + 1);
+
+        int* student_enrolled = reqeusted_course->get_students_enrolled();
+        student_enrolled[reqeusted_course->get_size()] = student_id;
+        reqeusted_course->set_students_enrolled(student_enrolled);
+        reqeusted_course->set_size(reqeusted_course->get_size() + 1);
+    }else
+    {
+        requester->set_pending_credit(requester->get_pending_credit() + reqeusted_course->get_num_credit());
+        Wait_List* wait_list = reqeusted_course->get_wait_list();
+        Student_ListNode* head = wait_list->get_head();
+        Student_ListNode* end = wait_list->get_end();
+        if(head == nullptr && end == nullptr) {
+            head = new Student_ListNode(student_id, nullptr);
+            end = head;
+        }else{
+            end->next = new Student_ListNode(student_id, nullptr);
+            end = end->next;
+        }
+        wait_list->set_head(head);
+        wait_list->set_end(end);
+    }
+    return true;
 }
 
 bool System::swap(const int student_id, const char* const original_course_name, const char* const target_course_name) {
     // TODO
+    Course* original_course = course_database->get_course_by_name(original_course_name);
+    Course* target_course = course_database->get_course_by_name(target_course_name);
+    Student* requester = student_database->get_student_by_id(student_id);
+
+    int potential_swap_pending_credit = 0;
+    if ((target_course->get_num_credit() - original_course->get_num_credit()) > 0)
+        potential_swap_pending_credit = target_course->get_num_credit() - original_course->get_num_credit();
+    if ((requester->get_curr_credit() + requester->get_pending_credit() + potential_swap_pending_credit) > requester->get_max_credit())
+        return false;
+
+    if (target_course->get_size() < target_course->get_capacity()) {
+        //enroll target course
+        requester->set_curr_credit(requester->get_curr_credit() + target_course->get_num_credit());
+        char** enrolled_courses = requester->get_enrolled_courses();
+        enrolled_courses[requester->get_num_enrolled_course()] = new char[strlen(target_course_name) + 1];
+        strcpy(enrolled_courses[requester->get_num_enrolled_course()], target_course_name);
+        requester->set_num_enrolled_course(requester->get_num_enrolled_course() + 1);
+        int* student_enrolled = target_course->get_students_enrolled();
+        student_enrolled[target_course->get_size()] = student_id;
+        target_course->set_students_enrolled(student_enrolled);
+        target_course->set_size(target_course->get_size() + 1);
+
+        //drop original course
+        drop(student_id, original_course_name);
+    }else{ // no vacancy add the request to the swap list
+        requester->set_pending_credit(requester->get_pending_credit() + potential_swap_pending_credit);
+        // add the student to waitlist
+        Wait_List* wait_list = target_course->get_wait_list();
+        Student_ListNode* head = wait_list->get_head();
+        Student_ListNode* end = wait_list->get_end();
+        if(head == nullptr && end == nullptr) {
+            head = new Student_ListNode(student_id, nullptr);
+            end = head;
+        }else{
+            end->next = new Student_ListNode(student_id, nullptr);
+            end = end->next;
+        }
+        wait_list->set_head(head);
+        wait_list->set_end(end);
+
+        // update the swap list of the student class
+        Swap_List* swap_list = requester->get_swap_list();
+        Swap* swap_head = swap_list->get_head();
+        if (!swap_head) {
+            swap_head = new Swap(original_course_name, target_course_name, nullptr);
+        }else{
+            swap_head = new Swap(original_course_name, target_course_name, swap_head);
+        }
+        swap_list->set_head(swap_head);
+    }
+    return true;
 }
 
 void System::drop(const int student_id, const char* const course_name) {
     // TODO
+    Student* requester = student_database->get_student_by_id(student_id);
+    Course* dropped_course = course_database->get_course_by_name(course_name);
+
+    // drop course for the student
+    char** enrolled_courses = requester->get_enrolled_courses();
+    int course_index = 0;
+    for (int i = 0; i < requester->get_num_enrolled_course(); i++) {
+        if (strcmp(enrolled_courses[i], course_name) == 0)
+            course_index = i;
+    }
+    delete[] enrolled_courses[course_index];
+    enrolled_courses[course_index] = enrolled_courses[requester->get_num_enrolled_course()];
+    enrolled_courses[requester->get_num_enrolled_course()] = nullptr;
+    requester->set_num_enrolled_course(requester->get_num_enrolled_course() - 1);
+    requester->set_curr_credit(requester->get_curr_credit() - dropped_course->get_num_credit());
+    // update the course class data member
+    int* enrolled_students = dropped_course->get_students_enrolled();
+    int student_index = 0;
+    for (int i = 0; i < dropped_course->get_size(); i++) {
+        if (enrolled_students[i] == student_id)
+            student_index = i;
+    }
+    enrolled_students[student_index] = enrolled_students[dropped_course->get_size()];
+    enrolled_students[dropped_course->get_size()] = 0;
+    dropped_course->set_size(dropped_course->get_size() - 1);
+
+    // if wait list is not empty
+    Wait_List* wait_list = dropped_course->get_wait_list();
+    Student_ListNode* wait_head = wait_list->get_head();
+    Student_ListNode* wait_end = wait_list->get_end();
+    if (wait_head) {
+
+    }else{
+        
+    }
 }
 
 void System::add_course(const char* const name, const int num_credit, const int course_capacity) {

@@ -28,7 +28,7 @@ Swap_List::Swap_List(const Swap_List& swap_list) {
     // TODO
     Swap* this_list = nullptr;
     Swap* node = swap_list.head;
-    while(!node) {
+    while(node) {
         this_list = new Swap(node->original_course_name, node->target_course_name, node->next);
         if (node == swap_list.head)
             head = this_list;
@@ -39,7 +39,7 @@ Swap_List::Swap_List(const Swap_List& swap_list) {
 
 Swap_List::~Swap_List() {
     // TODO
-    while(!head) {
+    while(head) {
         Swap* temp = head;
         head = head->next;
         delete temp;
