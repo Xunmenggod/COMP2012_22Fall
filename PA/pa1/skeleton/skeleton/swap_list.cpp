@@ -26,6 +26,11 @@ Swap_List::Swap_List():head(nullptr) {
 
 Swap_List::Swap_List(const Swap_List& swap_list) {
     // TODO
+    if (!swap_list.head){
+        head = nullptr;
+        return ;
+    }
+    
     Swap* this_list = nullptr;
     Swap* node = swap_list.head;
     while(node) {

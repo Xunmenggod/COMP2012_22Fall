@@ -17,6 +17,12 @@ Wait_List::Wait_List()
 
 Wait_List::Wait_List(const Wait_List& wait_list) {
     // TODO
+    if (!wait_list.head) {
+        head = nullptr;
+        end = nullptr;
+        return ;
+    }
+
     Student_ListNode* this_list = nullptr;
     Student_ListNode* node = wait_list.head;
 
@@ -35,6 +41,9 @@ Wait_List::Wait_List(const Wait_List& wait_list) {
 
 Wait_List::~Wait_List() {
     // TODO
+    if (!head)
+        return ;
+        
     while(head != end) {
         Student_ListNode* temp = head;
         head = head->next;
