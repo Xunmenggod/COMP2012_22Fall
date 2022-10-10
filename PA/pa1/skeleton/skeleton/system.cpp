@@ -88,7 +88,7 @@ bool System::add(const int student_id, const char* const course_name) {
         reqeusted_course->set_students_enrolled(student_enrolled);
         reqeusted_course->set_size(reqeusted_course->get_size() + 1);
     }else
-    {
+    {   // there is no vacancy to add
         requester->set_pending_credit(requester->get_pending_credit() + reqeusted_course->get_num_credit());
         Wait_List* wait_list = reqeusted_course->get_wait_list();
         Student_ListNode* head = wait_list->get_head();
@@ -119,6 +119,9 @@ bool System::swap(const int student_id, const char* const original_course_name, 
         return false;
 
     if (target_course->get_size() < target_course->get_capacity()) {
+        //drop original course
+        drop(student_id, original_course_name);
+        
         //enroll target course
         requester->set_curr_credit(requester->get_curr_credit() + target_course->get_num_credit());
         char** enrolled_courses = requester->get_enrolled_courses();
@@ -130,9 +133,6 @@ bool System::swap(const int student_id, const char* const original_course_name, 
         student_enrolled[target_course->get_size()] = student_id;
         target_course->set_students_enrolled(student_enrolled);
         target_course->set_size(target_course->get_size() + 1);
-
-        //drop original course
-        drop(student_id, original_course_name);
     }else{ // no vacancy add the request to the swap list
         requester->set_pending_credit(requester->get_pending_credit() + potential_swap_pending_credit);
         // add the student to waitlist
@@ -196,10 +196,6 @@ void System::drop(const int student_id, const char* const course_name) {
         Student* new_enrolled_student = student_database->get_student_by_id(wait_head->student_id);
         new_enrolled_student->set_curr_credit(new_enrolled_student->get_curr_credit() + dropped_course->get_num_credit());
         char** new_enrolled_courses = new_enrolled_student->get_enrolled_courses();
-        new_enrolled_courses[new_enrolled_student->get_num_enrolled_course()] = new char[strlen(course_name) + 1];
-        strcpy(new_enrolled_courses[new_enrolled_student->get_num_enrolled_course()], course_name);
-        new_enrolled_student->set_enrolled_courses(new_enrolled_courses);
-        new_enrolled_student->set_num_enrolled_course(new_enrolled_student->get_num_enrolled_course() + 1);
 
         // update class member for dropped course
         enrolled_students[student_index] = new_enrolled_student->get_student_id();
@@ -237,9 +233,19 @@ void System::drop(const int student_id, const char* const course_name) {
             if (original_course->get_num_credit() < dropped_course->get_num_credit())
                 credit_difference = dropped_course->get_num_credit() - original_course->get_num_credit();
             new_enrolled_student->set_pending_credit(new_enrolled_student->get_pending_credit() - credit_difference);
-
+            int new_enrolled_course_index = 0;
+            for (int i = 0; i < new_enrolled_student->get_num_enrolled_course(); i++) {
+                if (strcmp(curr_swap_node->original_course_name, new_enrolled_courses[i]) == 0)
+                    new_enrolled_course_index = i;
+            }
             // recursive call to get the chain reaction of drop operation
             drop(new_enrolled_student->get_student_id(), curr_swap_node->original_course_name);
+
+            new_enrolled_courses[new_enrolled_course_index] = new char[strlen(course_name) + 1];
+            strcpy(new_enrolled_courses[new_enrolled_course_index], course_name);
+            new_enrolled_student->set_enrolled_courses(new_enrolled_courses);
+            new_enrolled_student->set_num_enrolled_course(new_enrolled_student->get_num_enrolled_course() + 1);
+
             //delete the swap
             if (curr_swap_node == swap_head) {
                 if (swap_head->next == nullptr) {
@@ -262,11 +268,17 @@ void System::drop(const int student_id, const char* const course_name) {
             }
             // update
             swap_list->set_head(swap_head);
-        }else
+        }else{
+            // only add no swap
+            new_enrolled_courses[new_enrolled_student->get_num_enrolled_course()] = new char[strlen(course_name) + 1];
+            strcpy(new_enrolled_courses[new_enrolled_student->get_num_enrolled_course()], course_name);
+            new_enrolled_student->set_enrolled_courses(new_enrolled_courses);
+            new_enrolled_student->set_num_enrolled_course(new_enrolled_student->get_num_enrolled_course() + 1);
             new_enrolled_student->set_pending_credit(new_enrolled_student->get_pending_credit() - dropped_course->get_num_credit());
+        }
     }else{
         enrolled_students[student_index] = enrolled_students[dropped_course->get_size() - 1];
-        enrolled_students[dropped_course->get_size()] = 0;
+        enrolled_students[dropped_course->get_size() - 1] = 0;
         dropped_course->set_students_enrolled(enrolled_students);
         dropped_course->set_size(dropped_course->get_size() - 1);
     }

@@ -27,14 +27,21 @@ Wait_List::Wait_List(const Wait_List& wait_list) {
     Student_ListNode* node = wait_list.head;
 
     while(node) {
-        this_list = new Student_ListNode(node->student_id, node->next);
-        if (node == wait_list.head)
-            head = this_list;
-        else if(node == wait_list.end) {
-            end = this_list;
+        Student_ListNode* temp= new Student_ListNode(node->student_id, node->next);
+
+        if (node == wait_list.head){
+            head = temp;
+            this_list = temp;
+        }else{
+            this_list->next = temp;
+            this_list = this_list->next;
+        }
+        
+        if(node == wait_list.end) {
+            end = temp;
             break; 
         }
-        this_list = this_list->next;
+
         node = node->next;
     }
 }
@@ -43,13 +50,12 @@ Wait_List::~Wait_List() {
     // TODO
     if (!head)
         return ;
-        
-    while(head != end) {
+
+    while(head != nullptr) {
         Student_ListNode* temp = head;
         head = head->next;
         delete temp;
     }
-    delete end;
 }
 
 void Wait_List::print_list() const {

@@ -30,10 +30,13 @@ num_enrolled_course(student.num_enrolled_course), pending_credit(student.pending
     name = new char[strlen(student.name) + 1];
     strcpy(name, student.name);
 
-    enrolled_courses = new char*[student.num_enrolled_course];
-    for (int i = 0; i < num_enrolled_course; i++) {
-        enrolled_courses[i] = new char[strlen(student.enrolled_courses[i]) + 1];
-        strcpy(enrolled_courses[i], student.enrolled_courses[i]);
+    enrolled_courses = new char*[STUDENT_MAX_NUM_COURSE];
+    for (int i = 0; i < STUDENT_MAX_NUM_COURSE; i++) {
+        if (i < num_enrolled_course) {
+            enrolled_courses[i] = new char[strlen(student.enrolled_courses[i]) + 1];
+            strcpy(enrolled_courses[i], student.enrolled_courses[i]);
+        }else
+            enrolled_courses[i] = nullptr;
     }
 
     swap_list = new Swap_List(*student.swap_list); // call swap_list copy constructor
