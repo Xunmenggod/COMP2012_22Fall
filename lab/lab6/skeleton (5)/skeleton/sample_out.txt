@@ -1,0 +1,58 @@
+QA starts checking the Computer
+QA checks for healthy for electronics...
+It is working great!
+QA checks for healthy for electronics...
+It is working great!
+The Computer is fully repaired!
+QA checks for the CPU model...
+The CPU model is correct! 
+QA checks for the MEM model...
+The MEM model is correct! 
+The models are well-matched!
+QA finished checking the Computer.
+
+QA starts checking the Computer
+QA checks for healthy for electronics...
+It is working great!
+QA checks for healthy for electronics...
+It is working great!
+The Computer is fully repaired!
+QA checks for the CPU model...
+The CPU model is correct! 
+QA checks for the MEM model...
+The MEM model is correct! 
+The models are well-matched!
+QA finished checking the Computer.
+
+QA starts checking the Computer
+QA checks for healthy for electronics...
+It is working great!
+QA checks for healthy for electronics...
+It is working great!
+The Computer is fully repaired!
+QA checks for the CPU model...
+The CPU model is correct! 
+QA checks for the MEM model...
+The MEM model is correct! 
+The models are well-matched!
+QA finished checking the Computer.
+
+----------------------
+REPORT FOR TECHNICIANS
+----------------------
+NAME                ORDERS_COMPLETED
+Harry               2
+Ron                 1
+Hagrid              0
+Hermoine            0
+----------------------
+REPORT FOR ELECTRONICS
+----------------------
+Total number of CPU used: 6
+Number of Defected CPU: 3
+
+Total number of MEM used: 5
+Number of Defected MEM: 2
+----------------------
+--- END OF REPORT ----
+----------------------

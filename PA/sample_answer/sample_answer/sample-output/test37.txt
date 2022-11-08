@@ -1,0 +1,184 @@
+Enter testcase number: 
+Test Case: 37
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP1022P
+Num Credit: 3
+Current Size: 0 out of Capacity: 2
+
+Student Enrolled: 
+
+Waitlist Information: 
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 2
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Desmond
+Student ID: 1003	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Eddy
+Student ID: 1004	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Fred
+Student ID: 1005	 GPA: 2
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP1022P
+Num Credit: 3
+Current Size: 2 out of Capacity: 2
+
+Student Enrolled: 
+1000
+1001
+
+Waitlist Information: 
+Waitlist Number: 0
+1002
+Waitlist Number: 1
+1003
+Waitlist Number: 2
+1004
+Waitlist Number: 3
+1005
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 2
+Current Credit: 3 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP1022P
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 3 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP1022P
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 3
+
+
+-------------------
+Student Name: Desmond
+Student ID: 1003	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 3
+
+
+-------------------
+Student Name: Eddy
+Student ID: 1004	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 3
+
+
+-------------------
+Student Name: Fred
+Student ID: 1005	 GPA: 2
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 3
+
+
+

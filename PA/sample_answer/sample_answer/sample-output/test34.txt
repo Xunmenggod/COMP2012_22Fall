@@ -1,0 +1,113 @@
+Enter testcase number: 
+Test Case: 34
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP1022P
+Num Credit: 3
+Current Size: 1 out of Capacity: 4
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: LANG1002A
+Num Credit: 3
+Current Size: 1 out of Capacity: 4
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: SOSC1960
+Num Credit: 3
+Current Size: 4 out of Capacity: 4
+
+Student Enrolled: 
+1000
+1001
+1002
+1003
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: MATH1013
+Num Credit: 3
+Current Size: 4 out of Capacity: 4
+
+Student Enrolled: 
+1000
+1001
+1002
+1003
+
+Waitlist Information: 
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 3.8
+Current Credit: 12 out of Max Credit: 18
+
+Num Courses Enrolled: 4
+Course Enrolled: 
+COMP1022P
+LANG1002A
+SOSC1960
+MATH1013
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 6 out of Max Credit: 18
+
+Num Courses Enrolled: 2
+Course Enrolled: 
+SOSC1960
+MATH1013
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 6 out of Max Credit: 18
+
+Num Courses Enrolled: 2
+Course Enrolled: 
+SOSC1960
+MATH1013
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Desmond
+Student ID: 1003	 GPA: 4.3
+Current Credit: 6 out of Max Credit: 18
+
+Num Courses Enrolled: 2
+Course Enrolled: 
+SOSC1960
+MATH1013
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+

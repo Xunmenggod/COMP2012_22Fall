@@ -1,0 +1,103 @@
+Enter testcase number: 
+Test Case: 32
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP1022P
+Num Credit: 3
+Current Size: 1 out of Capacity: 2
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: MATH1000
+Num Credit: 3
+Current Size: 1 out of Capacity: 2
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: A_VERY_HARD_COURSE
+Num Credit: 10
+Current Size: 1 out of Capacity: 2
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: COMP1029C
+Num Credit: 1
+Current Size: 2 out of Capacity: 2
+
+Student Enrolled: 
+1000
+1002
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: COMP1029V
+Num Credit: 1
+Current Size: 1 out of Capacity: 2
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 2
+Current Credit: 18 out of Max Credit: 18
+
+Num Courses Enrolled: 5
+Course Enrolled: 
+COMP1022P
+A_VERY_HARD_COURSE
+MATH1000
+COMP1029C
+COMP1029V
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 1 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP1029C
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+

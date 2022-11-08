@@ -1,0 +1,80 @@
+LAB 4: Inheritence: Virtual Inheritance
+
+Invalid position of TextBox13
+Invalid position of TextBox13
+Invalid size of TextBox13
+Invalid size of TextBox13
+Invalid size of TextBox13
+The object TextBox13 is too large and cannot be added to Page1
+
+Container
+	Name: [MainPage]
+	Position: (100, 100)
+	Size: (1920, 1080) 
+		#objects: 3
+
+
+Container
+	Name: [Page1]
+	Position: (200, 200)
+	Size: (960, 640) 
+		#objects: 6
+
+
+TextBox
+	Name: [TextBox11]
+	Position: (300, 300)
+	Size: (100, 300) 
+		TextBoxText=[Welcome]
+
+Button
+	Name: [Button11]
+	Position: (600, 300)
+	Size: (100, 300) 
+		ButtonText=[Press This!]
+
+TextBox
+	Name: [TextBox12]
+	Position: (300, 500)
+	Size: (100, 300) 
+		TextBoxText=[Back]
+
+Button
+	Name: [Button12]
+	Position: (300, 600)
+	Size: (100, 100) 
+		ButtonText=[Do not press me!]
+
+Container
+	Name: [Page11]
+	Position: (500, 500)
+	Size: (200, 200) 
+		
+TextBox
+	Name: [TextBox13]
+	Position: (300, 300)
+	Size: (860, 540) 
+		TextBoxText=[Welcome]
+
+TextBox
+	Name: [TextBox1]
+	Position: (200, 200)
+	Size: (100, 300) 
+		TextBoxText=[Welcome Main!]
+
+Button
+	Name: [Button1]
+	Position: (500, 200)
+	Size: (100, 300) 
+		ButtonText=[Press This Button!]
+
+Destructing Container MainPage
+Destructing Container Page1
+Destructing TextBox TextBox11
+Destructing Button Button11
+Destructing TextBox TextBox12
+Destructing Button Button12
+Destructing Container Page11
+Destructing TextBox TextBox13
+Destructing TextBox TextBox1
+Destructing Button Button1

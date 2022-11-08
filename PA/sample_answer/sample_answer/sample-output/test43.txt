@@ -1,0 +1,24 @@
+Enter testcase number: 
+Test Case: 43
+Waitlist Number: 0
+1000
+Waitlist Number: 1
+1001
+Waitlist Number: 2
+1002
+Waitlist Number: 3
+1003
+Waitlist Number: 4
+1004
+Waitlist Number: 5
+1005
+Waitlist Number: 6
+1006
+Waitlist Number: 7
+1007
+Waitlist Number: 8
+1008
+Waitlist Number: 9
+1009
+Waitlist Number: 10
+1010

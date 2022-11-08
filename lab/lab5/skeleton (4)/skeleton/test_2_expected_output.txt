@@ -1,0 +1,91 @@
+LAB 5: Template and operator overloading
+Test 1:
+Input data:
+2 4 6 100 2 1 6 4 
+Output data:
+After adding 2 to the sequence:
+capacity: 1, size: 1, data: 
+2 
+
+After adding 4 to the sequence:
+capacity: 2, size: 2, data: 
+2 4 
+
+After adding 6 to the sequence:
+capacity: 4, size: 3, data: 
+2 4 6 
+
+After adding 100 to the sequence:
+capacity: 4, size: 4, data: 
+2 4 6 100 
+
+After adding 2 to the sequence:
+capacity: 8, size: 5, data: 
+2 2 4 6 100 
+
+After adding 1 to the sequence:
+capacity: 8, size: 6, data: 
+1 2 2 4 6 100 
+
+After adding 6 to the sequence:
+capacity: 8, size: 7, data: 
+1 2 2 4 6 6 100 
+
+After adding 4 to the sequence:
+capacity: 8, size: 8, data: 
+1 2 2 4 4 6 6 100 
+
+
+
+Test 2:
+Input data:
+a p p l e 
+Output data:
+After adding a to the sequence:
+capacity: 1, size: 1, data: 
+a 
+
+After adding p to the sequence:
+capacity: 2, size: 2, data: 
+a p 
+
+After adding p to the sequence:
+capacity: 4, size: 3, data: 
+a p p 
+
+After adding l to the sequence:
+capacity: 4, size: 4, data: 
+a l p p 
+
+After adding e to the sequence:
+capacity: 8, size: 5, data: 
+a e l p p 
+
+
+
+Test 3:
+Input data:
+(Height:120, Gender:Male, Name:Bob, weight:30) (Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Male, Name:Tom, weight:31) (Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Male, Name:Alice, weight:30) 
+Output data:
+After adding (Height:120, Gender:Male, Name:Bob, weight:30) to the sequence:
+capacity: 1, size: 1, data: 
+(Height:120, Gender:Male, Name:Bob, weight:30) 
+
+After adding (Height:119, Gender:Female, Name:Alice, weight:31) to the sequence:
+capacity: 2, size: 2, data: 
+(Height:119, Gender:Female, Name:Alice, weight:31) (Height:120, Gender:Male, Name:Bob, weight:30) 
+
+After adding (Height:119, Gender:Male, Name:Tom, weight:31) to the sequence:
+capacity: 4, size: 3, data: 
+(Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Male, Name:Tom, weight:31) (Height:120, Gender:Male, Name:Bob, weight:30) 
+
+After adding (Height:119, Gender:Female, Name:Alice, weight:31) to the sequence:
+capacity: 4, size: 4, data: 
+(Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Male, Name:Tom, weight:31) (Height:120, Gender:Male, Name:Bob, weight:30) 
+
+After adding (Height:119, Gender:Male, Name:Alice, weight:30) to the sequence:
+capacity: 8, size: 5, data: 
+(Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Female, Name:Alice, weight:31) (Height:119, Gender:Male, Name:Alice, weight:30) (Height:119, Gender:Male, Name:Tom, weight:31) (Height:120, Gender:Male, Name:Bob, weight:30) 
+
+
+

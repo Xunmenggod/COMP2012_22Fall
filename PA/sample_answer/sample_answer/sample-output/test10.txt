@@ -1,0 +1,71 @@
+Enter testcase number: 
+Test Case: 10
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP2012
+Num Credit: 4
+Current Size: 4 out of Capacity: 10
+
+Student Enrolled: 
+1000
+1001
+1002
+1003
+
+Waitlist Information: 
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 3.8
+Current Credit: 4 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP2012
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 4 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP2012
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 4 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP2012
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Desmond
+Student ID: 1003	 GPA: 4.3
+Current Credit: 4 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+COMP2012
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+

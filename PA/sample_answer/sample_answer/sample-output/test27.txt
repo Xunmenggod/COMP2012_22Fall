@@ -1,0 +1,170 @@
+Enter testcase number: 
+Test Case: 27
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: COMP2012
+Num Credit: 4
+Current Size: 1 out of Capacity: 3
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: MATH1014
+Num Credit: 3
+Current Size: 1 out of Capacity: 3
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: MECH1906
+Num Credit: 3
+Current Size: 1 out of Capacity: 3
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+
+
+---------------------
+Course Name: SOSC1960
+Num Credit: 3
+Current Size: 3 out of Capacity: 3
+
+Student Enrolled: 
+1001
+1002
+1003
+
+Waitlist Information: 
+Waitlist Number: 0
+1004
+Waitlist Number: 1
+1000
+
+
+---------------------
+Course Name: ECON1000
+Num Credit: 3
+Current Size: 3 out of Capacity: 3
+
+Student Enrolled: 
+1001
+1002
+1003
+
+Waitlist Information: 
+Waitlist Number: 0
+1004
+Waitlist Number: 1
+1000
+
+
+---------------------
+Course Name: BIEN1010
+Num Credit: 3
+Current Size: 3 out of Capacity: 3
+
+Student Enrolled: 
+1001
+1002
+1003
+
+Waitlist Information: 
+Waitlist Number: 0
+1004
+Waitlist Number: 1
+1000
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Adam
+Student ID: 1000	 GPA: 3.8
+Current Credit: 10 out of Max Credit: 18
+
+Num Courses Enrolled: 3
+Course Enrolled: 
+COMP2012
+MATH1014
+MECH1906
+
+Pending swaps information: 
+Pending Credit: 0
+Swap: 0
+Original Course: MECH1906
+Target Course: BIEN1010
+Swap: 1
+Original Course: COMP2012
+Target Course: ECON1000
+Swap: 2
+Original Course: MATH1014
+Target Course: SOSC1960
+
+
+-------------------
+Student Name: Brian
+Student ID: 1001	 GPA: 4.3
+Current Credit: 9 out of Max Credit: 18
+
+Num Courses Enrolled: 3
+Course Enrolled: 
+ECON1000
+SOSC1960
+BIEN1010
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Cindy
+Student ID: 1002	 GPA: 4.3
+Current Credit: 9 out of Max Credit: 18
+
+Num Courses Enrolled: 3
+Course Enrolled: 
+ECON1000
+SOSC1960
+BIEN1010
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Desmond
+Student ID: 1003	 GPA: 4.3
+Current Credit: 9 out of Max Credit: 18
+
+Num Courses Enrolled: 3
+Course Enrolled: 
+ECON1000
+SOSC1960
+BIEN1010
+
+Pending swaps information: 
+Pending Credit: 0
+
+
+-------------------
+Student Name: Harry
+Student ID: 1004	 GPA: 2
+Current Credit: 0 out of Max Credit: 18
+
+Num Courses Enrolled: 0
+Course Enrolled: 
+
+Pending swaps information: 
+Pending Credit: 9
+
+
+

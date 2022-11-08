@@ -1,0 +1,63 @@
+Enter testcase number: 
+Test Case: 16
+PRINTING ALL COURSE INFORMATION: 
+---------------------
+Course Name: MAGIC1000
+Num Credit: 1
+Current Size: 1 out of Capacity: 1
+
+Student Enrolled: 
+1000
+
+Waitlist Information: 
+Waitlist Number: 0
+1001
+
+
+---------------------
+Course Name: MAGIC1001
+Num Credit: 1
+Current Size: 1 out of Capacity: 1
+
+Student Enrolled: 
+1001
+
+Waitlist Information: 
+Waitlist Number: 0
+1000
+
+
+PRINTING ALL STUDENT INFORMATION: 
+-------------------
+Student Name: Harry
+Student ID: 1000	 GPA: 2
+Current Credit: 1 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+MAGIC1000
+
+Pending swaps information: 
+Pending Credit: 0
+Swap: 0
+Original Course: MAGIC1000
+Target Course: MAGIC1001
+
+
+-------------------
+Student Name: Ron
+Student ID: 1001	 GPA: 2
+Current Credit: 1 out of Max Credit: 18
+
+Num Courses Enrolled: 1
+Course Enrolled: 
+MAGIC1001
+
+Pending swaps information: 
+Pending Credit: 0
+Swap: 0
+Original Course: MAGIC1001
+Target Course: MAGIC1000
+
+
+

@@ -1,0 +1,58 @@
+LAB 3: Inheritence
+
+Container
+	Name: [MainPage]
+	Position: (0, 0)
+	Size: (1920, 1080). 
+		#containers: 1 | #textBoxes: 1 | #buttons: 1 | 
+
+Container
+	Name: [Page1]
+	Position: (100, 100)
+	Size: (960, 640). 
+		#textBoxes: 2 | #buttons: 2 | 
+
+TextBox
+	Name: [TextBox11]
+	Position: (100, 100)
+	Size: (100, 300). 
+		TextBoxText=[Welcome]
+
+TextBox
+	Name: [TextBox12]
+	Position: (100, 300)
+	Size: (100, 300). 
+		TextBoxText=[Back]
+
+Button
+	Name: [Button11]
+	Position: (400, 100)
+	Size: (100, 300). 
+		ButtonText=[Press This!]
+
+Button
+	Name: [Button12]
+	Position: (100, 400)
+	Size: (100, 100). 
+		ButtonText=[Do not press me!]
+
+TextBox
+	Name: [TextBox1]
+	Position: (100, 100)
+	Size: (100, 300). 
+		TextBoxText=[Welcome Main!]
+
+Button
+	Name: [Button1]
+	Position: (400, 100)
+	Size: (100, 300). 
+		ButtonText=[Press This Button!]
+
+Destructing Container MainPage
+Destructing Container Page1
+Destructing TextBox TextBox11
+Destructing TextBox TextBox12
+Destructing Button Button11
+Destructing Button Button12
+Destructing TextBox TextBox1
+Destructing Button Button1

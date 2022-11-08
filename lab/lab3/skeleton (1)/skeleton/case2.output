@@ -1,0 +1,16 @@
+LAB 3: Inheritence
+
+Container
+	Name: [MainPage]
+	Position: (0, 0)
+	Size: (1920, 1080). 
+		#buttons: 1 | 
+
+Button
+	Name: [Button11]
+	Position: (400, 100)
+	Size: (100, 300). 
+		ButtonText=[Press This!]
+
+Destructing Container MainPage
+Destructing Button Button11

@@ -1,0 +1,16 @@
+LAB 3: Inheritence
+
+Container
+	Name: [MainPage]
+	Position: (0, 0)
+	Size: (1920, 1080). 
+		#textBoxes: 1 | 
+
+TextBox
+	Name: [TextBox11]
+	Position: (100, 100)
+	Size: (100, 300). 
+		TextBoxText=[Welcome]
+
+Destructing Container MainPage
+Destructing TextBox TextBox11

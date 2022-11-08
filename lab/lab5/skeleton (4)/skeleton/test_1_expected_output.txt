@@ -1,0 +1,25 @@
+LAB 5: Template and operator overloading
+Test 1:
+Is (Height:120, Gender:Male, Name:Bob, weight:30) has a higher priority than (Height:119, Gender:Female, Name:Alice, weight:31)?
+No.
+
+Test 2:
+Is (Height:119, Gender:Female, Name:Alice, weight:31) has a higher priority than (Height:119, Gender:Male, Name:Bob, weight:30)?
+Yes.
+
+Test 3:
+Is (Height:119, Gender:Male, Name:Tom, weight:31) has a higher priority than (Height:119, Gender:Male, Name:Tommy, weight:30)?
+Yes.
+
+Test 4:
+Is (Height:119, Gender:Male, Name:Tommy, weight:30) has a higher priority than (Height:119, Gender:Male, Name:Alex, weight:30)?
+No.
+
+Test 5:
+Is (Height:119, Gender:Male, Name:Tommy, weight:31) has a higher priority than (Height:119, Gender:Male, Name:Tommy, weight:30)?
+Yes.
+
+Test 6:
+Is (Height:119, Gender:Male, Name:Tommy, weight:30) has a higher priority than (Height:119, Gender:Male, Name:Tommy, weight:30)?
+No.
+

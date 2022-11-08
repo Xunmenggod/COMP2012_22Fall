@@ -1,0 +1,35 @@
+Enter testcase number: 
+Test Case: 41
+Swap: 0
+Original Course: EASY_COURSE
+Target Course: DIFFICULT_COURSE
+Swap: 1
+Original Course: COMP1022P
+Target Course: MATH2033
+Swap: 2
+Original Course: COMP1029C
+Target Course: ECON1013
+Swap: 3
+Original Course: COMP1029V
+Target Course: PPOL2110
+Swap: 4
+Original Course: COMP1029P
+Target Course: ECON3113
+Swap: 5
+Original Course: COMP1029A
+Target Course: MATH3033
+Swap: 6
+Original Course: COMP2011
+Target Course: MATH2343
+Swap: 7
+Original Course: COMP2012
+Target Course: MATH4114
+Swap: 8
+Original Course: COMP2611
+Target Course: MATH3423
+Swap: 9
+Original Course: COMP3511
+Target Course: MATH3424
+Swap: 10
+Original Course: COMP3711
+Target Course: MATH3425

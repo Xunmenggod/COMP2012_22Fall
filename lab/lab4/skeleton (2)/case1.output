@@ -1,0 +1,50 @@
+LAB 4: Inheritence: Virtual Inheritance
+
+
+Container
+	Name: [Page1]
+	Position: (0, 0)
+	Size: (960, 640) 
+		
+Button
+	Name: [Button11]
+	Position: (0, 0)
+	Size: (100, 300) 
+		ButtonText=[Press This!]
+
+TextBox
+	Name: [TextBox11]
+	Position: (0, 0)
+	Size: (100, 300) 
+		TextBoxText=[Welcome]
+
+Container
+	Name: [MainPage]
+	Position: (0, 0)
+	Size: (1920, 1080) 
+		#objects: 1
+
+
+Container
+	Name: [Page1]
+	Position: (0, 0)
+	Size: (960, 640) 
+		#objects: 2
+
+
+Button
+	Name: [Button11]
+	Position: (0, 0)
+	Size: (100, 300) 
+		ButtonText=[Press This!]
+
+TextBox
+	Name: [TextBox11]
+	Position: (0, 0)
+	Size: (100, 300) 
+		TextBoxText=[Welcome]
+
+Destructing Container MainPage
+Destructing Container Page1
+Destructing Button Button11
+Destructing TextBox TextBox11
