@@ -2,6 +2,10 @@
 #include "electronics.h"
 
 //TODO: initialize the static varibles of class CPU and class MEM
+int CPU::manufacture_count = 0;
+int CPU::defect_count = 0;
+int MEM::manufacture_count = 0;
+int MEM::defect_count = 0;
 
 Electronics::Electronics(bool healthy): healthy {healthy} {
 

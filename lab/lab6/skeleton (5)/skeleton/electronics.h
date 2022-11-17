@@ -4,6 +4,8 @@
 #include "model.h"
 
 class Electronics{
+    friend class Diagnosis_Tool;
+
     private:
     bool healthy;
     public:
@@ -17,6 +19,8 @@ class Electronics{
 };
 
 class CPU: public Electronics{
+    friend class Diagnosis_Tool;
+
     private:
     CPU_Model model;
 
@@ -36,6 +40,8 @@ class CPU: public Electronics{
 };
 
 class MEM: public Electronics{
+    friend class Diagnosis_Tool;
+
     private:
     MEM_Model model;
     public:

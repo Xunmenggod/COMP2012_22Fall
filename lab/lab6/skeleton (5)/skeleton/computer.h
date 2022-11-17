@@ -7,6 +7,8 @@ class CPU;
 class MEM;
 
 class Computer{
+    friend class Technician;
+
     private:
     CPU* cpu;
     MEM* mem;

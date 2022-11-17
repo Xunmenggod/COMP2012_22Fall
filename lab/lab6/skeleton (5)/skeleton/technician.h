@@ -35,6 +35,8 @@ class Technician{
 };
 
 class Diagnosis_Tool{
+    friend class Technician; 
+
     private:
     bool diagnose(Electronics* electronics){
         return electronics->healthy;
