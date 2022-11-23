@@ -54,19 +54,23 @@ BST_Mailman * BST_Mailman_Node::getLeftBST() const
 //  PUT TOO MANY MAILS. (a max of MAX_NUM_MAILS add_mail calls)
 void BST_Mailman::addMail(Mail *mail)
 {
-    if (root->streetName == mail->getStreetName()) {
-        root->BST_Mailman_Node::addMail(mail);
-        return ;
-    }else if (root->left &&mail->getStreetName() < root->streetName) 
-            root->left->addMail(mail);
-    else if (root->right && mail->getStreetName() > root->streetName)
-        root->right->addMail(mail);
-    else if (!root->left && mail->getStreetName() < root->streetName) {
-        root->left = new BST_Mailman();
-        root->left->root = new BST_Mailman_Node(mail);
-    }else if (!root->right && mail->getStreetName() > root->streetName) {
-        root->right = new BST_Mailman();
-        root->right->root = new BST_Mailman_Node(mail);
+    if (!root) {
+        root = new BST_Mailman_Node(mail);
+    }else {
+        if (root->streetName == mail->getStreetName()) {
+            root->BST_Mailman_Node::addMail(mail);
+            return ;
+        }else if (root->left &&mail->getStreetName() < root->streetName) 
+                root->left->addMail(mail);
+        else if (root->right && mail->getStreetName() > root->streetName)
+            root->right->addMail(mail);
+        else if (!root->left && mail->getStreetName() < root->streetName) {
+            root->left = new BST_Mailman();
+            root->left->root = new BST_Mailman_Node(mail);
+        }else if (!root->right && mail->getStreetName() > root->streetName) {
+            root->right = new BST_Mailman();
+            root->right->root = new BST_Mailman_Node(mail);
+        }
     }
 }
 
@@ -77,15 +81,18 @@ void BST_Mailman_Node::addMail(Mail *mail)
 
 // TODO: Remove a mail, given its street name and ID
 bool BST_Mailman::remove(int id, std::string streetName)
-{
-    if (streetName == root->streetName) 
-        return root->remove(id);
-    else if (root->left && streetName < root->streetName) 
-        root->left->remove(id, streetName);
-    else if (root->right && streetName > root->streetName)
-        root->right->remove(id, streetName);
+{   
+    if (root) {
+        if (streetName == root->streetName) 
+            return root->remove(id);
+        else if (root->left && streetName < root->streetName) 
+            root->left->remove(id, streetName);
+        else if (root->right && streetName > root->streetName)
+            root->right->remove(id, streetName);
 
-    return false;
+        return false;
+    }else
+        return false;
 }
 
 bool BST_Mailman_Node::remove(int id)
@@ -105,14 +112,17 @@ bool BST_Mailman_Node::remove(int id)
 // TODO: Find a mail item, given its street name and ID
 Mail * BST_Mailman::find(int id, std::string streetName)
 {
-    if (streetName == root->streetName)
-        return root->find(id);
-    else if (root->left && streetName < root->streetName)
-        root->left->find(id, streetName);
-    else if (root->right && streetName > root->streetName)
-        root->right->find(id, streetName);
+    if (root) {
+        if (streetName == root->streetName)
+            return root->find(id);
+        else if (root->left && streetName < root->streetName)
+            root->left->find(id, streetName);
+        else if (root->right && streetName > root->streetName)
+            root->right->find(id, streetName);
 
-    return nullptr;
+        return nullptr;
+    }else 
+        return nullptr;
 }
 
 Mail *BST_Mailman_Node::find(int id)
@@ -130,17 +140,21 @@ Mail *BST_Mailman_Node::find(int id)
 void BST_Mailman::printInOrder() const
 {
     if (root) {
-        root->left->printInOrder();
+        if (root->left)
+            root->left->printInOrder();
         root->print();
-        root->right->printInOrder();
+        if(root->right)
+            root->right->printInOrder();
     }
 }
 
 void BST_Mailman::printPostOrder() const
 {
     if (root) {
-        root->left->printPostOrder();
-        root->right->printPostOrder();
+        if (root->left)
+            root->left->printPostOrder();
+        if(root->right)    
+            root->right->printPostOrder();
         root->print();
     }
 }
@@ -149,8 +163,10 @@ void BST_Mailman::printPreOrder() const
 {
     if (root) {
         root->print();
-        root->left->printPreOrder();
-        root->right->printPreOrder();
+        if(root->left)
+            root->left->printPreOrder();
+        if(root->right)
+            root->right->printPreOrder();
     }
 }
 

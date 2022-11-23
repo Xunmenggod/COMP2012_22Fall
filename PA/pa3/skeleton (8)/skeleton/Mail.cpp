@@ -13,13 +13,13 @@ void Mail::hashAddress()
 {
     addressHash = 0;
     int i = 0;
-    while(address[i]) {
-        addressHash += address[i] * (i + 1);
+    while(address[i] != '\0') {
+        addressHash = (addressHash + address[i] * (i + 1)) % HASH_MODULO;
         i++;
-    }  //overflow problem???
+    }
     i = 0;
-    while(content[i]) {
-        addressHash += content[i] * (i + 1);
+    while(content[i] != '\0') {
+        addressHash = (addressHash + content[i] * (i + 1)) % HASH_MODULO;
         i++;
     }
 }
