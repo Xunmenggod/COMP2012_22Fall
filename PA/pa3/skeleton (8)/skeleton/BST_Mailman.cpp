@@ -115,10 +115,9 @@ bool BST_Mailman_Node::remove(int id)
 Mail * BST_Mailman::find(int id, std::string streetName)
 {
     if (root) {
-        if (streetName == root->streetName) {
-            // std::cout<<"find the street: "<<root->streetName<<std::endl;
+        if (streetName == root->streetName) 
             return root->find(id);
-        }else if (root->left && streetName < root->streetName)
+        else if (root->left && streetName < root->streetName)
             return root->left->find(id, streetName);
         else if (root->right && streetName > root->streetName)
             return root->right->find(id, streetName);
@@ -132,10 +131,8 @@ Mail *BST_Mailman_Node::find(int id)
 {
     for (int i = 0; i < currentMailsStored; i++) {
         if (mailPtr[i])
-            if (mailPtr[i]->getId() == id) {
-                // std::cout<<"find the mail put in "<<i<<"th position of the mailman \n"<<"with id: "<<mailPtr[i]->getId()<<std::endl;;
+            if (mailPtr[i]->getId() == id) 
                 return mailPtr[i];
-            }
     }
     return nullptr;
 }

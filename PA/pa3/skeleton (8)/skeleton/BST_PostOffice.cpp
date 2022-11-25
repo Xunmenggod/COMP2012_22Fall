@@ -48,10 +48,9 @@ District BST_PostOffice_Node::getDistrict() const
 Mail *BST_PostOffice::find(District dist, int id, std::string streetName)
 {
     if (root) {
-        if (dist == root->district) {
+        if (dist == root->district) 
             return root->find(id, streetName);
-            // std::cout<<"find the district: "<<root->district<<std::endl;
-        }else if (root->left && dist < root->district)
+        else if (root->left && dist < root->district)
             return root->left->find(dist, id, streetName);
         else if (root->right && dist > root->district)
             return root->right->find(dist, id, streetName);  
@@ -66,10 +65,8 @@ Mail *BST_PostOffice_Node::find(int id, std::string streetName)
     Mail* mail = nullptr;
     for (int i = 0; i < HASH_MODULO; i++) {
         mail = mailman[i].find(id, streetName);
-        if (mail) {
-            // std::cout<<"find the mailman in "<<i<<"th position of the office node \n";
+        if (mail) 
             break;
-        }
     }   
     return mail;
 }
