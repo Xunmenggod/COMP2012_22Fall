@@ -26,7 +26,9 @@ BST_Mailman::~BST_Mailman()
 }
 
 BST_Mailman_Node::~BST_Mailman_Node()
-{
+{   
+    for (int i = 0; i < currentMailsStored; i++)
+        delete mailPtr[i];
     if (left)
         delete left;
     if(right)
