@@ -119,6 +119,10 @@ void testcase8()
     Mail *m4 = new Mail(4, "HSBC, Sai Kung Town", District::CentralAndWestern, "Sample", "Hello there!");
     po->addMail(m4);
     Mail * find = po->find(District::CentralAndWestern, 4, "Sample");
+    if (!find)
+        std::cout<<"find returns nullptr"<<std::endl;
+    else
+        std::cout<<find->getId()<<std::endl;
     if(find == m4)
     {
         std::cout << "Pointers Match!" << std::endl;

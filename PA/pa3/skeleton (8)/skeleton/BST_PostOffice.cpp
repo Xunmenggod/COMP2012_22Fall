@@ -48,12 +48,13 @@ District BST_PostOffice_Node::getDistrict() const
 Mail *BST_PostOffice::find(District dist, int id, std::string streetName)
 {
     if (root) {
-        if (dist == root->district)
+        if (dist == root->district) {
             return root->find(id, streetName);
-        else if (root->left && dist < root->district)
-            root->left->find(dist, id, streetName);
+            // std::cout<<"find the district: "<<root->district<<std::endl;
+        }else if (root->left && dist < root->district)
+            return root->left->find(dist, id, streetName);
         else if (root->right && dist > root->district)
-            root->right->find(dist, id, streetName);  
+            return root->right->find(dist, id, streetName);  
         
         return nullptr;
     }else
@@ -65,8 +66,10 @@ Mail *BST_PostOffice_Node::find(int id, std::string streetName)
     Mail* mail = nullptr;
     for (int i = 0; i < HASH_MODULO; i++) {
         mail = mailman[i].find(id, streetName);
-        if (mail)
+        if (mail) {
+            // std::cout<<"find the mailman in "<<i<<"th position of the office node \n";
             break;
+        }
     }   
     return mail;
 }
@@ -80,9 +83,9 @@ bool BST_PostOffice::remove(District dist, int id, std::string streetName)
         if (dist == root->district)
             return root->remove(id, streetName);
         else if (root->left && dist < root->district)
-            root->left->remove(dist, id, streetName);
+            return root->left->remove(dist, id, streetName);
         else if (root->right && dist > root->district)
-            root->right->remove(dist, id, streetName);  
+            return root->right->remove(dist, id, streetName);  
         
         return false;
     }else
@@ -142,9 +145,11 @@ void BST_PostOffice::printDistrict(District dist, printType type) const
 
 void BST_PostOffice_Node::print(printType type) const
 {
-    std::cout << "The District Mail Report for district: " << district << std::endl;
-    for (int i = 0; i < HASH_MODULO; i++)
+    std::cout << "The District Mail Report for district " << district << std::endl;
+    for (int i = 0; i < HASH_MODULO; i++) {
+        std::cout<<"For Mailman "<<i<<std::endl;
         this->printMailman(i, type);
+    }
 }
 
 // TODO: Given a district and ID of the mailman, print all mail in it
@@ -167,7 +172,6 @@ void BST_PostOffice_Node::printMailman(int i, printType type) const
     switch (type)
         {
             case printType::inorder:
-                std::cout<<"For Mailman: "<<i<<std::endl;
                 mailman[i].printInOrder();
                 break;
             
@@ -190,7 +194,9 @@ void BST_PostOffice::printInOrder() const
     if (root) {
         if (root->left)
             root->left->printInOrder();
-        root->print(printType::inorder);
+        std::cout<<"BST Node for District: "<<root->district<<std::endl;
+        for (int i = 0; i < HASH_MODULO; i++)
+            root->mailman[i].printInOrder();
         if (root->right)
             root->right->printInOrder();
     }
@@ -203,14 +209,18 @@ void BST_PostOffice::printPostOrder() const
             root->left->printPostOrder();
         if (root->right)
             root->right->printPostOrder();
-        root->print(printType::postorder);
+        std::cout<<"BST Node for District: "<<root->district<<std::endl;
+        for (int i = 0; i < HASH_MODULO; i++)
+            root->mailman[i].printPostOrder();
     }
 }
 
 void BST_PostOffice::printPreOrder() const
 {
     if (root) {
-        root->print(printType::preorder);
+        std::cout<<"BST Node for District: "<<root->district<<std::endl;
+        for (int i = 0; i < HASH_MODULO; i++)
+            root->mailman[i].printPreOrder();
         if (root->left)
             root->left->printPreOrder();
         if (root->right)
